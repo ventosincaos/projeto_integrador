@@ -105,7 +105,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    /*deixa os formularios de login e recuperar senha escondidos quando não estão na caixa principal*/
+    /*deixa os formularios de login e recuperar senha escondidos quando não estão na caixa principal, assim como arredonda o botão close*/
     overflow: hidden;
     transform: scale(0);
     /*cria o efeito de aparecer na tela a caixa de login quando o botão de login no menu de navegação é ativado*/
