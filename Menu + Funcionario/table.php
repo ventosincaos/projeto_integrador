@@ -76,22 +76,6 @@
                         <td>teste@gmail.com</td>
                         <td> <a href="show.php"><ion-icon class="read" name="book-outline"></ion-icon></a> </td>
                     </tr>
-                    <tr>
-                        <td> 8</td>
-                        <td><img src="images/Sarita Limbu.jpg" alt=""> Pessoa</td>
-                        <td> Cozinheiro </td>
-                        <td> (61)99999-9999 </td>
-                        <td>teste@gmail.com</td>
-                        <td> <a href="show.php"><ion-icon class="read" name="book-outline"></ion-icon></a> </td>
-                    </tr>
-                    <tr>
-                        <td> 9</td>
-                        <td><img src="images/Alex Gonley.jpg" alt=""> Pessoa </td>
-                        <td> Cozinheiro </td>
-                        <td> (61)99999-9999 </td>
-                        <td>teste@gmail.com</td>
-                        <td> <a href="show.php"><ion-icon class="read" name="book-outline"></ion-icon></a> </td>
-                    </tr>
                 </tbody>
             </table>
         </section>
