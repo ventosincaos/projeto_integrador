@@ -83,18 +83,16 @@ thead {
     background-color: #f2f2f2;
 }
 
-.actions {
-    text-align: center;
-}
-
-.actions a {
-    color: #000;
-    text-decoration: none;
-}
-
-.actions a ion-icon {
-    font-size: 20px;
+a ion-icon{
+    color: #162938;
     vertical-align: middle;
+    font-size: 40px;
+}
+
+td a ion-icon {
+    font-size: 30px;
+    vertical-align: middle;
+    color: #162938;
 }
 
 main.table {
