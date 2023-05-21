@@ -1,6 +1,6 @@
 <?php
 
-class tableManager
+class tableManagerFuncionario
 {
     private $pdo;
 
@@ -13,7 +13,7 @@ class tableManager
     {
         if ($this->pdo) {
             $res = array();
-            $cmd = $this->pdo->query("SELECT nome, sobrenome, email, celular FROM funcionario ORDER BY nome");
+            $cmd = $this->pdo->query("SELECT * FROM funcionario ORDER BY nome");
             $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
             return $res;
         } else {

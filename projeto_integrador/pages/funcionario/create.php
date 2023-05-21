@@ -26,12 +26,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projeto_integrador/pages/include/head/head
                 <div class="texfield-group">
                     <div class="texfield">
                         <label for="cpf">CPF</label>
-                        <input type="number" name="cpf" placeholder="Digite o CPF" maxlength="11">
+                        <input type="text" name="cpf" placeholder="Digite o CPF" maxlength="11">
                     </div>
 
                     <div class="texfield">
                         <label for="rg">RG</label>
-                        <input type="number" name="rg" placeholder="Digite o RG" maxlength="7">
+                        <input type="text" name="rg" placeholder="Digite o RG" maxlength="7">
                     </div>
 
                     <div class="texfield">
@@ -42,13 +42,25 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projeto_integrador/pages/include/head/head
 
                 <div class="texfield-group-">
                 <div class="texfield">
-                        <label for="telefone">Telefone</label>
-                        <input type="number" name="telefone" placeholder="Digite o telefone">
+                        <label for="data_ascimento">Data de Nascimento</label>
+                        <input type="text" name="data_ascimento" placeholder="Digite o telefone">
                     </div>
 
                     <div class="texfield">
                              <label for="email">E-mail</label>
                              <input type="email" name="email" placeholder="Digite o e-mail">
+                         </div>
+                    </div> <!-- Fim da div texfiled-group- -->
+
+                <div class="texfield-group-">
+                <div class="texfield">
+                        <label for="telefone">Telefone</label>
+                        <input type="text" name="telefone" placeholder="Digite o telefone">
+                    </div>
+
+                    <div class="texfield">
+                             <label for="celular">Celular</label>
+                             <input type="text" name="celular" placeholder="Digite o e-mail">
                          </div>
                     </div> <!-- Fim da div texfiled-group- -->
 

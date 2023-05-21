@@ -4,6 +4,7 @@ require_once '../../../projeto_integrador/config/DatabaseConnector.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/projeto_integrador/config/session_process.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/projeto_integrador/config/funcionario/manager/table_manager.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/projeto_integrador/config/funcionario/manager/update_manager.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/projeto_integrador/config/funcionario/manager/read_manager.php';
 
 
 $dbname = "sysffee";
@@ -14,8 +15,8 @@ $senha = "Rosa0107@Diaz";
 $conn = new DatabaseConnector($dbname, $host, $user, $senha);
 $pdo = $conn->getConnection();
 
-$tableManager = new tableManager($pdo);
-$tableManager->searchAllFuncionario();
+$tableManagerFuncionario = new tableManagerFuncionario($pdo);
+$readManagerFuncionario = new readManagerFuncionario($pdo);
 $updateManager = new updateManager($pdo);
 // Resto do código...
 

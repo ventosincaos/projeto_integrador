@@ -11,7 +11,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projeto_integrador/pages/include/menu/head
         <section class="table__header">
             <h1>Funcionários</h1>
             <div class="adicionar">
-                <a href="#"><ion-icon name="add-circle-outline"></ion-icon></a>
+                <a href="create.php"><ion-icon name="add-circle-outline"></ion-icon></a>
             </div>
         </section>
         <section class="table__body">
@@ -22,33 +22,35 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projeto_integrador/pages/include/menu/head
                         <th> sobrenome </th>
                         <th> email </th>
                         <th> celular </th>
-                        <th> Info </th>
+                        <?php if ($_SESSION['id_cargo'] == 1) : ?>
+                            <th> Info </th>
+                        <?php endif; ?>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <?php
-                        #VAI PROCURAR OS DADOS DE P (OQ ABRIO A CONEXÃO COM O BANCO) E FAZ O FAVOR DE USAR A FUNÇÃO AI
-                        $dados = $tableManager->searchAllFuncionario();
-                        #SE A CONTA FOR MAIOR Q 0 VAI TER UMA TABLE AUTOMATICA ESTILO VINICIUS13
+                        $dados = $tableManagerFuncionario->searchAllFuncionario();
                         if (count($dados) > 0) {
-                            for ($i = 0; $i < count($dados); $i++) {
+                            foreach ($dados as $funcionario) {
                                 echo "<tr>";
-                                #PRA CADA LINHA DE DADO VAI REPETIR PRA DAR A TABELINHA
-                                foreach ($dados[$i] as $key => $value) {
-                                    if ($key != "id") {
-                                        echo "<td>" . $value . "</td>";
-                                    }
+                                echo "<td>" . $funcionario['nome'] . "</td>";
+                                echo "<td>" . $funcionario['sobrenome'] . "</td>";
+                                echo "<td>" . $funcionario['email'] . "</td>";
+                                echo "<td>" . $funcionario['celular'] . "</td>";
+
+                                // Verifica o nível de acesso do usuário
+                                if ($_SESSION['id_cargo'] == 1) {
+                                    echo "<td><a href=\"/projeto_integrador/pages/funcionario/update.php?id=" . $funcionario['id_funcionario'] . "\"><ion-icon name=\"book-outline\"></ion-icon></a></td>";
                                 }
-                        ?>
-                                <td> <a href="update.php"><ion-icon name="book-outline"></ion-icon></a> </td>
-                        <?php
+
                                 echo "</tr>";
                             }
                         } else {
-                            echo "<tr><td colspan='6'>Nenhuma pessoa cadastrada.</td></tr>";
+                            echo "<tr><td colspan='5'>Nenhuma pessoa cadastrada.</td></tr>";
                         }
                         ?>
+
                     </tr>
                 </tbody>
             </table>

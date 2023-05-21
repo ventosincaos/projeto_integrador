@@ -2,23 +2,25 @@
 include $_SERVER['DOCUMENT_ROOT'] . '/projeto_integrador/config/session_process.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/projeto_integrador/config/funcionario/funcionario_process.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/projeto_integrador/pages/include/head/head_funcionario.php';
+ob_start(); // inicia o buffer de saída
+
 ?>
 
 <body>
 
     <?php
-    if (!isset($_POST["bt_sub"])) {
-        #$id = $_GET["id"];
-        #$funcionario = $conn->readFuncionario($id);
+    if (!isset($_GET["bt_sub"])) {
+        $id_funcionario = $_GET["id"];
+        $funcionario = $readManagerFuncionario->readFuncionarioID($id_funcionario);
     ?>
 
         <div class='Todo'>
-            <?php include_once('read.php'); ?>
+            <?php #include_once('read.php'); ?>
             <div class='lado_direito'>
                 <div class="card">
                     <h1>Atualizar</h1>
 
-                    <form method="POST" action="">
+                    <form method="GET" action="">
                         <!-- NOME E SOBRENOME -->
                         <div class="texfield-group-">
                             <div class="texfield">
@@ -36,17 +38,17 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projeto_integrador/pages/include/head/head
                         <div class="texfield-group">
                             <div class="texfield">
                                 <label for="cpf">CPF</label>
-                                <input type="number" name="cpf" placeholder="Digite o CPF" maxlength="11" value="<?php echo $funcionario['cpf']; ?>">
+                                <input type="text" name="cpf" placeholder="Digite o CPF" maxlength="14" value="<?php echo $funcionario['cpf']; ?>">
                             </div>
 
                             <div class="texfield">
                                 <label for="rg">RG</label>
-                                <input type="number" name="rg" placeholder="Digite o RG" maxlength="7" value="<?php echo $funcionario['rg']; ?>">
+                                <input type="text" name="rg" placeholder="Digite o RG" maxlength="7" value="<?php echo $funcionario['rg']; ?>">
                             </div>
 
                             <div class="texfield">
                                 <label for="emissor">Emissor</label>
-                                <input type="text" name="emissor" placeholder="Digite o Órgão emissor" value="<?php echo $funcionario['emissor']; ?>">
+                                <input type="text" name="orgao_emissor" placeholder="Digite o Órgão emissor" value="<?php echo $funcionario['orgao_emissor']; ?>">
                             </div>
                         </div>
 
@@ -65,12 +67,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projeto_integrador/pages/include/head/head
                         <div class="texfield-group-">
                             <div class="texfield">
                                 <label for="telefone">Telefone</label>
-                                <input type="number" name="telefone" placeholder="Digite o telefone" value="<?php echo $funcionario['telefone']; ?>">
+                                <input type="text" name="telefone" placeholder="Digite o telefone" value="<?php echo $funcionario['telefone']; ?>">
                             </div>
 
                             <div class="texfield">
                                 <label for="celular">Celular</label>
-                                <input type="number" name="celular" placeholder="Digite o celular" value="<?php echo $funcionario['celular']; ?>">
+                                <input type="text" name="celular" placeholder="Digite o celular" value="<?php echo $funcionario['celular']; ?>">
                             </div>
                         </div>
 
@@ -91,25 +93,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projeto_integrador/pages/include/head/head
                             </div>
 
                             <div class="texfield">
-                                <label for="nome_cargo">Cargo</label>
-                                <select name="nome_cargo" id="cargo">
-                                    <option value="Gerente" <?php echo ($funcionario['nome_cargo'] == 'Gerente') ? 'selected' : ''; ?>>Gerente</option>
-                                    <option value="Atendente" <?php echo ($funcionario['nome_cargo'] == 'Atendente') ? 'selected' : ''; ?>>Atendente</option>
-                                    <option value="Limpeza" <?php echo ($funcionario['nome_cargo'] == 'Limpeza') ? 'selected' : ''; ?>>Limpeza</option>
-                                    <option value="Cozinheiro" <?php echo ($funcionario['nome_cargo'] == 'Cozinheiro') ? 'selected' : ''; ?>>Cozinheiro</option>
+                                <label for="id_cargo">Cargo</label>
+                                <select name="id_cargo" id="cargo">
+                                    <option value="1" <?php echo ($funcionario['id_cargo'] == '1') ? 'selected' : ''; ?>>Gerente</option>
+                                    <option value="2" <?php echo ($funcionario['id_cargo'] == '2') ? 'selected' : ''; ?>>Barista</option>
+                                    <option value="3" <?php echo ($funcionario['id_cargo'] == '3') ? 'selected' : ''; ?>>Atendente</option>
+                                    <option value="4" <?php echo ($funcionario['id_cargo'] == '4') ? 'selected' : ''; ?>>Cozinheiro</option>
+                                    <option value="5" <?php echo ($funcionario['id_cargo'] == '5') ? 'selected' : ''; ?>>Limpeza</option>
                                 </select>
-                            </div>
-                        </div>
-
-                        <div class="texfield-group-">
-                            <div class="texfield">
-                                <label for="senha">Nova senha</label>
-                                <input type="password" name="senha" placeholder="Digite a senha">
-                            </div>
-
-                            <div class="texfield">
-                                <label for="confirme">Confirme a senha</label>
-                                <input type="password" name="confirme" placeholder="Confirme a senha">
                             </div>
                         </div>
 
@@ -127,23 +118,23 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projeto_integrador/pages/include/head/head
     } else {
         try {
             $id = $_GET["id"];
-            $nome = $_POST["nome"];
-            $sobrenome = $_POST["sobrenome"];
-            $cpf = $_POST["cpf"];
-            $rg = $_POST["rg"];
-            $orgao_emissor = $_POST["emissor"];
-            $data_nascimento = $_POST["data_nascimento"];
-            $email = $_POST["email"];
-            $telefone = $_POST["telefone"];
-            $celular = $_POST["celular"];
-            $endereco = $_POST["endereco"];
-            $data_admissao = $_POST["data_admissao"];
-            $data_demissao = $_POST["data_demissao"];
-            $nome_cargo = $_POST["nome_cargo"];
-            $descricao_func = $_POST["descricao_func"];
+            $nome = $_GET["nome"];
+            $sobrenome = $_GET["sobrenome"];
+            $cpf = $_GET["cpf"];
+            $rg = $_GET["rg"];
+            $orgao_emissor = $_GET["orgao_emissor"];
+            $data_nascimento = $_GET["data_nascimento"];
+            $email = $_GET["email"];
+            $telefone = $_GET["telefone"];
+            $celular = $_GET["celular"];
+            $endereco = $_GET["endereco"];
+            $data_admissao = $_GET["data_admissao"];
+            $data_demissao = $_GET["data_demissao"];
+            $id_cargo = $_GET["id_cargo"];
+            $descricao_func = $_GET["descricao_func"];
 
-            $updateManager = new UpdateManager($pdo);
-            $updateManager->updateFuncionario($id, $nome, $sobrenome, $cpf, $rg, $orgao_emissor, $email, $telefone, $celular, $endereco, $data_admissao, $data_demissao, $nome_cargo, $descricao_func);
+            $updateManager = new updateManager($pdo);
+            $updateManager->updateFuncionario($id, $nome, $sobrenome, $cpf, $rg, $orgao_emissor, $data_nascimento, $email, $telefone, $celular, $endereco, $data_admissao, $data_demissao, $id_cargo, $descricao_func);
 
             header('Location: ../index/index.php');
         } catch (PDOException $e) {
@@ -156,5 +147,5 @@ include $_SERVER['DOCUMENT_ROOT'] . '/projeto_integrador/pages/include/head/head
 </body>
 
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/projeto_integrador/pages/include/footer.php';
+ob_end_flush(); // Envia o conteúdo do buffer para o navegador e libera a memória usada pelo buffer
 ?>

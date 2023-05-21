@@ -12,3 +12,11 @@ class LogoutManager {
         exit();
     }
 }
+
+$logoutManager = new LogoutManager();
+
+if (isset($_GET['logout'])) {
+    $logoutManager->logout();
+}
+
+?>

@@ -3,8 +3,6 @@
 require_once '../../../projeto_integrador/config/DatabaseConnector.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/projeto_integrador/config/login/manager/login_manager.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/projeto_integrador/config/login/manager/logout_manager.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/projeto_integrador/config/login/manager/session_manager.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/projeto_integrador/config/session_process.php';
 
 session_start();
 
@@ -18,7 +16,6 @@ $pdo = $conn->getConnection();
 
 $loginManager = new loginManager($pdo);
 $logoutManager = new LogoutManager();
-$sessionManager = new SessionManager($pdo);
 $loginManager->login();
 $loginError = $loginManager->getLoginError();
 // Resto do código...

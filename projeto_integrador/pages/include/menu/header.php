@@ -5,5 +5,6 @@
             <a href="../../../../projeto_integrador/pages/funcionario/table.php">Funcionários</a> <!--Colocar o link de referencia do arquivo no lugar do #-->
             <a href="#">Estoques</a>
             <a href="#">Vendas</a>
+            <a href="../../../../projeto_integrador/pages/login/login.php?logout=true">sair</a>
         </nav>
     </header>

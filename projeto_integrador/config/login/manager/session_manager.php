@@ -16,7 +16,7 @@ class SessionManager
     function verificarSessao()
     {
         if (!isset($_SESSION['id_funcionario'])) {
-            header('Location: ../../login/login.php');
+            header('Location: ../../pages/login/login.php');
             exit();
         }
 
@@ -26,7 +26,7 @@ class SessionManager
         // Verifica se o funcionário existe no banco de dados
         $cargo = $this->obterNivelAcessoDoFuncionario($idFuncionario);
         if (!$cargo) {
-            header('Location: ../../login/login.php');
+            header('Location: ../../pages/login/login.php');
             exit();
         }
 

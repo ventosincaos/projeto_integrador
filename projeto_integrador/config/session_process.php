@@ -13,3 +13,4 @@ $pdo = $conn->getConnection();
 
 $logoutManager = new LogoutManager();
 $sessionManager = new SessionManager($pdo);
+$sessionManager->verificarSessao();
