@@ -5,7 +5,10 @@
             <?php include_once('show.php')?>
      <div class='lado_direito'>
      <div class="card">
-     <h1>Atualizar</h1> 
+     <h1>Atualizar    
+            <a href="#"><ion-icon name="book-outline"></ion-icon></a>
+            <a href=""><ion-icon name="trash-outline"></ion-icon></a>
+            </h1> 
                 
                 <div class="texfield-group-">
                 <div class="texfield">
@@ -31,7 +34,7 @@
                     </div>
 
                     <div class="texfield">
-                        <label for="emissor">Órg emissor</label>
+                        <label for="emissor">Emissor</label>
                         <input type="text" name="emissor" placeholder="Digite o Órgão emissor">
                     </div>
                 </div>
@@ -75,6 +78,19 @@
                         </select>
                     </div>
                 </div>
+
+               <div class="texfield-group-">
+                <div class="texfield">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" placeholder="Digite a senha">
+                </div>
+
+                <div class="texfield">
+                    <label for="confirme">Confirme a senha</label>
+                    <input type="password" name="confirme" placeholder="Confirme a senha">
+                </div>
+
+                </div> <!-- Fim da div texfiled-group- -->
 
                 <div class="texfield">
                     <label for="descricao">Descrição do cargo</label>

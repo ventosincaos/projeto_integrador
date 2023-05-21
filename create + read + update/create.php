@@ -74,10 +74,24 @@
                     </div>
                 </div> <!-- Fim da div texfiled-group- -->
 
+                <div class="texfield-group-">
+                <div class="texfield">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" placeholder="Digite a senha">
+                </div>
+
+                <div class="texfield">
+                    <label for="confirme">Confirme a senha</label>
+                    <input type="password" name="confirme" placeholder="Confirme a senha">
+                </div>
+
+                </div> <!-- Fim da div texfiled-group- -->
+
                 <div class="texfield">
                     <label for="descricao">Descrição do cargo</label>
                     <textarea name="descricao"  placeholder="Descrição do cargo"></textarea>
                 </div>
+
                 <button class="btn">Cadastrar</button>
     </div> <!-- Fim da div card-->
     </div> <!-- Fim da div lado_direito-->

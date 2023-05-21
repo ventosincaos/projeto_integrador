@@ -34,7 +34,7 @@
             </h4>
         </div>
             <h4>Descrição do cargo <br>
-            <span>Chorar no banheiro</span>
+            <span>Tomar café e dizer se é bom</span>
             </h4>
     <div class="botao">  
       <button class="edit-button"><a href="#">Editar</a></button>
