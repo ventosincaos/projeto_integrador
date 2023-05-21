@@ -81,7 +81,7 @@
 
                <div class="texfield-group-">
                 <div class="texfield">
-                    <label for="senha">Senha</label>
+                    <label for="senha">Nova senha</label>
                     <input type="password" name="senha" placeholder="Digite a senha">
                 </div>
 
