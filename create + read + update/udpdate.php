@@ -5,10 +5,7 @@
             <?php include_once('show.php')?>
      <div class='lado_direito'>
      <div class="card">
-     <h1>Atualizar    
-            <a href="#"><ion-icon name="book-outline"></ion-icon></a>
-            <a href=""><ion-icon name="trash-outline"></ion-icon></a>
-            </h1> 
+     <h1>Atualizar</h1> 
                 
                 <div class="texfield-group-">
                 <div class="texfield">
