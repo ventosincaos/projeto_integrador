@@ -1,0 +1,60 @@
+CREATE SCHEMA `novo` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+use novo;
+
+CREATE TABLE `novo`.cargos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(100) NOT NULL,
+  salario DECIMAL(8,2) NOT NULL,
+  descricao VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE `novo`.funcionarios (
+  id INT PRIMARY KEY,
+  id_cargo INT,
+  nome VARCHAR(255) NOT NULL COMMENT 'nome',
+  sobrenome VARCHAR(255) NOT NULL COMMENT 'sobrenome',
+  data_nascimento DATE NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  endereco VARCHAR(255) NOT NULL,
+  telefone VARCHAR(20) NULL,
+  celular VARCHAR(20) NOT NULL,
+  cpf VARCHAR(14) NOT NULL,
+  rg VARCHAR(12) NOT NULL,
+  orgao_emissor VARCHAR(255) NOT NULL,
+  data_admissao DATE NOT NULL,
+  data_demissao DATE NULL,
+  descricao VARCHAR(255) NOT NULL,
+  FOREIGN KEY (id_cargo) REFERENCES `novo`.cargos(id)
+);
+
+CREATE TABLE `novo`.usuarios (
+  id INT PRIMARY KEY,
+  senha VARCHAR(255) NOT NULL,
+  id_cargo INT,
+  email VARCHAR(255) NOT NULL,
+  FOREIGN KEY (id_cargo) REFERENCES `novo`.cargos(id)
+);
+
+INSERT INTO cargos (nome, salario, descricao) VALUES
+('Gerente', 3500.00, 'Responsável pela gestão da cafeteria'),
+('Cozinheiro(a)', 2500.00, 'Responsável pelo preparo dos alimentos'),
+('Barista', 2000.00, 'Prepara e serve café e outras bebidas'),
+('Atendente', 1500.00, 'Responsável pelo caixa e atendimento aos clientes');
+
+INSERT INTO `novo`.funcionarios (id, id_cargo, nome, sobrenome, data_nascimento, email, endereco, telefone, celular, cpf, rg, orgao_emissor, data_admissao, descricao)
+VALUES (1234 , 1, 'William', 'Shakespeare', '1564-04-26', 'shakespeare@example.com', 'Rua dos Escritores, 123', '123456789', '987654321', '12345678900', '12345678', 'SSP', '2023-01-01', 'Gerente');
+
+INSERT INTO `novo`.funcionarios (id, id_cargo, nome, sobrenome, data_nascimento, email, endereco, telefone, celular, cpf, rg, orgao_emissor, data_admissao, descricao)
+VALUES (5678, 2, 'Jane', 'Austen', '1775-12-16', 'austen@example.com', 'Avenida das Letras, 456', '987654321', '123456789', '98765432100', '87654321', 'SSP', '2023-01-01', 'Atendente');
+
+INSERT INTO `novo`.funcionarios (id, id_cargo, nome, sobrenome, data_nascimento, email, endereco, telefone, celular, cpf, rg, orgao_emissor, data_admissao, descricao)
+VALUES (9101, 3, 'Charles', 'Dickens', '1812-02-07', 'dickens@example.com', 'Travessa das Histórias, 789', '543216789', '987654321', '65432198700', '76543219', 'SSP', '2023-01-01', 'Cozinheiro(a)');
+
+INSERT INTO `novo`.usuarios (id, senha, id_cargo, email)
+VALUES (1234, 'senha1', 1, 'shakespeare@example.com');
+
+INSERT INTO `novo`.usuarios (id, senha, id_cargo, email)
+VALUES (5678, 'senha2', 2, 'austen@example.com');
+
+INSERT INTO `novo`.usuarios (id, senha, id_cargo, email)
+VALUES (9101, 'senha3', 3, 'dickens@example.com');
