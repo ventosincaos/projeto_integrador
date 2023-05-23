@@ -1,0 +1,637 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.login_body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom,#e1e4f0, #97A6E1);
+    background-size: cover;
+    background-position: center;
+}
+
+
+canvas{
+    position: absolute;
+    z-index: .1;
+    width: 100%;
+    Height: 100%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+
+.wrapper{
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: none;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*deixa os formularios de login e recuperar senha quando não estão na caixa principal*/
+    overflow: hidden;
+}
+
+.wrapper.active{
+    height: 320px;
+}
+
+.wrapper .form-box.login{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+/* manda o login para o canto esquerdo*/
+.wrapper.active .form-box.login{
+    transition: none;
+    transform: translateX(-400px);
+}
+/* manda o recupera senha para o canto direito*/
+.wrapper .form-box.register{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+/*efeito de transição de tela de recuperar senha para login*/
+.wrapper.active .form-box.register{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.form-box h2 {
+    font-size: 2em;
+    color: #162938;
+    text-align: center;
+}
+
+.input-box{
+    position: relative;
+    width: 320px;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #162938;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label { 
+    top: -5px;
+}
+ /*formata os campos de preenchimento*/
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+/*formata os icones dos campos de preenchimento*/
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #162938;
+    line-height: 57px;
+}
+
+.btn_login{
+    width: 100%;
+    height: 45px;
+    background: #162938;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+
+.login-register{
+    font-size: .9em;
+    color: #162938;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a {
+    color: #162938;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover{
+    text-decoration: underline;
+}
+
+/*CSS TABLE*/
+
+.table_body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #97A6E1;
+    background-size: cover;
+    background-position: center;
+}
+
+.logo {
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+}
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.container {
+    margin: 20px;
+}
+
+#main-title {
+    text-align: center;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+a ion-icon{
+    color: #162938;
+    vertical-align: middle;
+    font-size: 40px;
+}
+
+td a ion-icon {
+    font-size: 30px;
+    vertical-align: middle;
+    color: #162938;
+}
+
+main.table {
+    width: 82vw;
+    height: 82vh;
+    background-color: #fff5;
+    backdrop-filter: blur(7px);
+    box-shadow: 0 .4rem .8rem #0005;
+    border-radius: .8rem;
+    overflow: hidden;
+}
+
+.table__header {
+    width: 100%;
+    height: 10%;
+    background-color: #fff4;
+    padding: .8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table__body {
+    width: 95%;
+    max-height: calc(89% - 1.6rem);
+    background-color: #fffb;
+    margin: .8rem auto;
+    border-radius: .6rem;
+    overflow: auto;
+    overflow: overlay;
+}
+
+.table__body::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.table__body::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.table__body:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+table {
+    width: 100%;
+}
+
+td img {
+    width: 36px;
+    height: 36px;
+    margin-right: .5rem;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+table,
+th,
+td {
+    border-collapse: collapse;
+    padding: 1rem;
+    text-align: left;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #97A6E1;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #0000000b;
+}
+
+tbody tr {
+    --delay: .1s;
+    transition: .5s ease-in-out var(--delay), background-color 0s;
+}
+
+tbody tr.hide {
+    opacity: 0;
+    transform: translateX(100%); 
+}
+
+tbody tr:hover {
+    background-color: #fff6 !important;
+}
+
+tbody tr td,
+tbody tr td p,
+tbody tr td img {
+    transition: .2s ease-in-out;
+}
+
+tbody tr.hide td{
+    padding: 0;
+    font: 0/0 sans-serif;
+    transition: .2s ease-in-out .5s;
+}
+
+tbody tr.hide td img {
+    width: 0;
+    height: 0;
+    transition: .2s ease-in-out .5s;
+}
+
+
+
+
+
+/*CSS CADASTRO*/
+.form_body
+{
+  background-color: #e1e4f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+.Todo
+{
+  position: relative;
+  background-color: transparent;
+  width: 100%;
+  
+  margin: 50px;
+  display: flex;
+  
+  
+}
+
+.lado_esquerdo {
+    position: relative;
+    background:linear-gradient(to bottom,#646f9a, #97A6E1);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056;
+    width: 65%;
+  }
+  
+  .lado_esquerdo h6, h4, h3 {
+    color: #000000b6;
+  }
+  
+  .lado_esquerdo h3{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+
+ .lado_esquerdo h5{
+    color: #00000056;
+    font-weight: 400;
+ }
+  
+  .perfil {
+    display: flex;
+    position: relative;
+    max-height: 9%;
+    background: #eae6fd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 10px 40px #00000056;
+    color: #97A6E1;
+   
+  }
+
+  h4 img {
+    width: 36px;
+    height: 36px;
+    margin-right: .5rem;
+    border-radius: 50%;
+    vertical-align: middle;
+    
+}
+
+  
+  .perfil h4 span
+  {
+    font-size: 15px;
+    font-weight: 400;
+    color: #00000056;
+  }
+
+  .editar h4{
+    font-size: 15px;
+    font-weight: 400;
+    color: #00000056;
+  }
+
+
+  .editar h4 span
+  {
+    color: #000000b6;
+    font-weight: 800;
+  }
+  
+  .perfil button.edit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    padding: 10px 0px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    background: #97A6E1;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px #00000056;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+  
+  .perfil button.edit a {
+    text-decoration: none;
+    color: #F4F2FF;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+  }
+  
+  
+  .editar {
+  position: relative;
+  margin-top: 30px;
+  background: #eae6fd;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0px 10px 40px #00000056;
+  color: #97A6E1;
+  min-width: 60%;
+  min-height: 60%;
+}
+
+.editar .texfield-group- {
+  position: relative;
+}
+
+.editar .edit-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  justify-content: end;
+  width: 20%;
+  padding: 10px 0px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  background: #97A6E1;
+  cursor: pointer;
+  box-shadow: 0px 10px 40px #00000056;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.editar .delete-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  justify-content: end;
+  width: 20%;
+  padding: 10px 0px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  background: #97A6E1;
+  cursor: pointer;
+  box-shadow: 0px 10px 40px #00000056;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.editar button a {
+  text-decoration: none;
+  color: #F4F2FF;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.lado_direito
+{
+  position: relative;
+  padding: 0px;
+  color: #003147;
+  width: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: transparent;
+  padding: 30px 35px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 40px #00000056;
+}
+
+
+.card  h1 {
+  color: #3d4b82;
+  font-weight: 800;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+
+.texfield {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.texfield input,
+.texfield select,
+.texfield textarea {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: transparent;
+    color:#00000056;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: #97A6E1;
+    box-sizing: border-box;
+}
+
+.texfield label {
+    color: #00000056;
+    margin-bottom: 10px;
+}
+
+.texfield input::placeholder,
+.texfield textarea::placeholder {
+    color: #00000056;
+}
+
+.btn {
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px 0px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #F4F2FF;
+    background: #97A6E1;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px #00000056;
+}
+
+
+/* a diferença do texfield-group e texfield-group- é que o primeiro é para alinhar 3 itens,
+e o segundo para alinhar 2 */
+
+.texfield-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-start;
+    margin: 10px 0px;
+  }
+  
+  .texfield-group .texfield {
+    width: calc(33.33% - 10px); /* Divide o espaço igualmente em 3 colunas, subtraindo a margem entre os campos */
+  }
+  
+  
+
+.texfield-group- {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-start;
+    margin: 10px 0px;
+}
+
+.texfield-group- .texfield {
+    width: calc(50% - 10px); /* Divide o espaço igualmente em 2 colunas, subtraindo a margem entre os campos */
+}
