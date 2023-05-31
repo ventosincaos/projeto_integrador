@@ -2,6 +2,8 @@
 <?php 
       include_once('head.php'); 
       include_once("../config/processamentoLogin.php");
+
+//é preciso colocar a validação do cargo e a mensagem de alerta login ou senha erradas deveria aparecer nessa pagina, mas está em processamentoLogin.php
 ?>
   
   <body class="login_body">
