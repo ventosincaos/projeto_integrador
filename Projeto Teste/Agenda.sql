@@ -9,9 +9,10 @@ data_nascimento DATE,
 telefone VARCHAR(20),
 email VARCHAR(150),
 admissao DATE,
-cargo ENUM('Administrador', 'Geral', 'Adm sistema'),
+-- demissao DATE NULL,
+cargo ENUM('Administrador', 'Geral', 'Adm sistema'), --precisa criar a tabela cargo
 senha VARCHAR(255),
-observacao TEXT
+observacao VARCHAR(1000)
 );
 
 INSERT INTO contatos (nome, sobrenome, cpf, emissor, data_nascimento, telefone, email, admissao, cargo, senha, observacao) 
