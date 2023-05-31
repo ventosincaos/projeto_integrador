@@ -18,7 +18,6 @@
 <tr>
 <th scope="col">Id</th>
 <th scope="col">Nome</th>
-<th scope="col">CPF</th>
 <th scope="col">Telefone</th>
 <th scope="col">Email</th>
 <th scope="col">Cargo</th>
@@ -32,7 +31,6 @@
 <tr>
 <td ><?=$contato["id"]?></td>
 <td ><?=$contato["nome"]?></td>
-<td ><?=$contato["cpf"]?></td>
 <td ><?=$contato["telefone"]?></td>
 <td ><?=$contato["email"]?></td> 
 <td ><?=$contato["cargo"]?></td> 
