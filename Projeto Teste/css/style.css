@@ -42,6 +42,7 @@ header {
     color: #fff;
     user-select: none;
 }
+
 /*barra de navegação*/
 .navigation a {
     position: relative;
@@ -52,26 +53,8 @@ header {
     margin-left: 40px;
 }
 
-/* efeitos da barra ne navegação
-.navigation a::after{
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 100%;
-    height: 3px;
-    background: #fff;
-    border-radius: 5px;
-    transform-origin: right;
-    transform: scaleX(0);
-    transition: transform .5s;
-}
 
-.navigation a:hover::after{
-    transform-origin: left;
-    transform: scaleX(1);
-}
-*/
+
 
 /*botão de login no meu de navegação*/
 .navigation .btnLogin-popup {
@@ -232,12 +215,6 @@ header {
     background-position: center;
 }
 
-.logo {
-    font-size: 2em;
-    color: #fff;
-    user-select: none;
-}
-
 .navigation a {
     position: relative;
     font-size: 1.1em;
@@ -289,6 +266,7 @@ thead {
 }
 
 a ion-icon{
+    position: sticky;
     color: #162938;
     vertical-align: middle;
     font-size: 40px;
@@ -348,14 +326,14 @@ main.table {
 table {
     width: 100%;
 }
-
+/* imagens caso fossem usadas
 td img {
     width: 36px;
     height: 36px;
     margin-right: .5rem;
     border-radius: 50%;
     vertical-align: middle;
-}
+}*/
 
 table,
 th,
@@ -410,9 +388,16 @@ tbody tr.hide td img {
     transition: .2s ease-in-out .5s;
 }
 
+/* o botão ícone de deletar na table.php*/
+  .delete-btn{
+    background: transparent;
+    font-size: 30px;
+    border-color: transparent;
+    padding-right: 10px;
+  }
 
 
-/*CSS CADASTRO*/
+/*CSS FORMULÁRIOS*/
 .form_body
 {
   background-color:#97A6E1;
@@ -432,6 +417,7 @@ tbody tr.hide td img {
   grid-template-columns: 1fr 1fr;
 
 }
+
  /* CSS SHOW.PHP */
 .lado_esquerdo {
     position: relative;
@@ -467,7 +453,7 @@ tbody tr.hide td img {
     color: #97A6E1;
    
   }
-
+/* caso fossem usadas as imagens
   h4 img {
     width: 36px;
     height: 36px;
@@ -475,7 +461,7 @@ tbody tr.hide td img {
     border-radius: 50%;
     vertical-align: middle;
     
-}
+}*/
 
   
   .perfil h4 span
@@ -562,6 +548,7 @@ tbody tr.hide td img {
   margin-right: 10px;
 }
 
+/* botão de deletar que seria usado na página SHOW.PHP
 .editar .delete-button {
   position: absolute;
   bottom: 0;
@@ -581,6 +568,7 @@ tbody tr.hide td img {
   margin-bottom: 10px;
   margin-right: 10px;
 }
+*/
 
 .editar button a {
   text-decoration: none;
@@ -590,10 +578,7 @@ tbody tr.hide td img {
   letter-spacing: 3px;
 }
 
-.back{
-    justify-content: end;
-}
-
+/* o link para voltar para a página TABLE.PHP*/
  .back a{
         position: relative;
         font-size: 1.1em;
@@ -1027,9 +1012,4 @@ e o segundo para alinhar 2 */
     background-color: #000;
   }
 
-  .delete-btn{
-    background: transparent;
-    font-size: 30px;
-    border-color: transparent;
-    padding-right: 10px;
-  }
+
