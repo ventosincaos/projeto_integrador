@@ -9,10 +9,10 @@ if (isset($_POST['email']) && isset($_POST['senha'])) {
     } else if (strlen($_POST['senha']) == 0) {
         
     } else {
-
+      // é necessário colocar o cargo como validação de login também
         $email = $_POST['email'];
         $senha = $_POST['senha'];
-        $cargo = $_POST['cargo'];
+     //   $cargo = $_POST['cargo'];
 
         try {
             $sql = "SELECT * FROM contatos WHERE email = :email AND senha = :senha";
@@ -37,6 +37,8 @@ if (isset($_POST['email']) && isset($_POST['senha'])) {
                 header("Location: ".$BASE_URL."/../templates/menu.php");
                 exit();
             } else {
+                
+                //essa mensagem deveria aparecer na tela de login caso estivessem errados os dados
                 echo "<div class='alert alert-danger alert-dismissible fade show text-center' role='alert'>
                 <strong>Falha ao logar! E-mail ou senha incorretos</strong>
                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
