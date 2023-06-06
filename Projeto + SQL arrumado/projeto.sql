@@ -29,10 +29,10 @@ SET foreign_key_checks = 0;
 INSERT INTO funcionario (nome, sobrenome, cpf, emissor, data_nascimento, telefone, email, admissao, cargo, senha, observacao) 
 VALUES('Maria', 'Ferreira', '03529512141', 'SSP', '1998-12-21', '(61)983951104', 'pipoquinha@gmail.com', '2023-02-12', 'Administrador', '123456', 'observação 1');
 
-INSERT INTO funcionario (nome, sobrenome, cpf, emissor, data_nascimento, telefone, email, admissao, demissao, cargo,  senha, observacao) 
+INSERT INTO funcionario (nome, sobrenome, cpf, emissor, data_nascimento, telefone, email, admissao, cargo,  senha, observacao) 
 VALUES('joaquim', 'Ferreira','03529512141', 'SSP','1998-12-21', '(62)983951004', 'pipoquinha1@gmail.com', '2023-02-12', 'Geral', '123456', 'observação 2');
 
-INSERT INTO funcionario (nome, sobrenome, cpf, emissor, data_nascimento, telefone, email, admissao, demissao, cargo,  senha, observacao) 
+INSERT INTO funcionario (nome, sobrenome, cpf, emissor, data_nascimento, telefone, email, admissao, cargo,  senha, observacao) 
 VALUES('Tereza', 'Ferreira','03529512141', 'SSP','1998-12-21', '(84)984451004', 'pipoquinha2@gmail.com','2023-02-12', 'Geral', '123456', 'observação 3');
 
 
