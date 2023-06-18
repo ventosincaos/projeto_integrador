@@ -41,7 +41,7 @@
   padding: 25px 0;
 }
 
-.overlay {
+.over {
   position: absolute;
   left: 0;
   top: 0;
@@ -51,8 +51,8 @@
   border-radius: 25px 25px 0 25px;
 }
 
-/*.overlay::before,
-.overlay::after {
+/*.over::before,
+.over::after {
   content: '';
   position: absolute;
   right: 0;
@@ -62,7 +62,7 @@
   background-color: #884A39;
 }*/
 
-.overlay::after {
+.over::after {
   border-radius: 0 25px 0 0;
   background-color: #e7e7e7;
 }
