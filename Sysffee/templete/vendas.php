@@ -16,7 +16,7 @@
             <ul>
                 <li class="active"><a href="#home"> <span class="dot" style="background-color: rgb(206, 93, 93);"></span>Cafés</a></li>
                 <li class="active"><a href="#news"> <span class="dot" style="background-color: rgb(192, 190, 73);"></span>Sobremesas</a></li>
-                <li class="active" style="float:right" ><a href="#exit"><i style="font-size: 25px;" class="fa-solid fa-right-from-bracket"></i></a></li>
+                <li class="active" style="float:right" ><a href="menu.php"><i style="font-size: 25px;" class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
         </div>
     </div>
@@ -38,12 +38,12 @@
                     
                     <div class="card swiper-slide">
                         <div class="image-content">
-                            <span class="overlay" ><i style="font-size: 30px; float: right; margin-right: 15px; margin-top: 10px; color: white;" class="fa-solid fa-circle-minus"></i></span>
-
-    
+                            <span class="over" ><i style="font-size: 30px; float: right; margin-right: 15px; margin-top: 10px; color: white;" class="fa-solid fa-circle-minus"></i></span>
 
 
-                          
+                            
+
+                            
                             <div class="card-image">
                             <img src="<?=$arquivo['path']?>" alt="" class="card-img"> 
                              </div>
@@ -68,7 +68,7 @@
                           
                              
                                                  
-                            <button class="button"> <a class="ver-mais-vendas" href="<?=$BASE_URL?>/showProduct.php?id=<?=$product["id"]?>"> Selecionar </a> </button>
+                          <button class="button"> <a class="ver-mais-vendas" onclick="openNav()"> Selecionar </a>
                       
                         </div>
                     </div>
