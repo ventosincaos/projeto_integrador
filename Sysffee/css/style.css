@@ -189,6 +189,7 @@
   height: 40px;
   left: 15%;
   top: 15px;
+  
 }
 
 ul {
@@ -218,7 +219,7 @@ li a {
   text-decoration: none;
   border-radius: 13px 13px 0px 0px;
   padding: 13px 60px;
-  
+  transition: 0.3s;
 }
 
 .active {
@@ -227,7 +228,6 @@ li a {
 
 li a:hover:not(.active) {
   background-color: #884A39;
-  
   color: white;
 }
 .dot {
@@ -237,25 +237,16 @@ li a:hover:not(.active) {
   margin-right: 20px;
   background-color: #bbb;
   border-radius: 50%;
-
+  
 }
 .flex{ 
-  margin-top: -20px;
-  margin-bottom: 26px;
+  
+  position: relative;
+  bottom: 9px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #ffffff00;
-  background-size: cover;
-  background-position: center;
-  top: 0;
-  left: 0;
   width: 100%;
-  padding: 20px 100px;
-  display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 99;
 }
 
 body{
@@ -266,6 +257,14 @@ body{
   font-size: 2em;
   color: #fff;
   user-select: none;
+  margin-left: 100px;
+
+}
+
+.navigation{
+  padding: 20px 100px;
+  
+
 }
 
 .navigation a {
@@ -275,6 +274,8 @@ body{
   text-decoration: none;
   font-weight: 500;
   margin-left: 40px;
+  
+  
 }
 
 .navigation a::after{
