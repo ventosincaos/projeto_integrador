@@ -18,7 +18,7 @@
     background-size: cover;
     background-position: center;
 }
-
+table
 
 canvas{
     position: absolute;
@@ -282,7 +282,7 @@ td a ion-icon {
 
 main.table {
     width: 92vw;
-    height: 82vh;
+    height: 80vh;
     background-color: #fff5;
     backdrop-filter: blur(7px);
     box-shadow: 0 .4rem .8rem #0005;
@@ -1013,5 +1013,6 @@ e o segundo para alinhar 2 */
     left: -8px;
     background-color: #000;
   }
+  
 
 
