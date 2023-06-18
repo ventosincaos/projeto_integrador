@@ -13,6 +13,8 @@
 <script src="<?= $BASE_URL?>/../js/script1.js"></script>
 <!-- JavaScript -->
 <script src="../js/script.js"></script>
+<script src="../js/scriptNav.js"></script>
+
 </body>
 </html>
 
