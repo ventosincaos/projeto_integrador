@@ -21,8 +21,8 @@
 	PRIMARY KEY (id)
 );
     
-    CREATE TABLE funcionario (
-	id  integer AUTO_INCREMENT NOT NULL,
+    CREATE TABLE funcionarios (
+	id  AUTO_INCREMENT primary key,
     nome VARCHAR(40),
 	sobrenome VARCHAR(40),
     cpf VARCHAR(40),
@@ -34,6 +34,8 @@
     cargo VARCHAR(40),
     senha VARCHAR(40),
 	observacao VARCHAR(255),
-    primary key(id) );
-    
+    );
+
+     # Precisa criar tabela cargo separado 
+
     
