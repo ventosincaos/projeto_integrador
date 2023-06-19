@@ -21,8 +21,8 @@
 	PRIMARY KEY (id)
 );
     
-    CREATE TABLE funcionario (
-	id  integer AUTO_INCREMENT NOT NULL,
+    CREATE TABLE funcionarios (
+	id int AUTO_INCREMENT primary key,
     nome VARCHAR(40),
 	sobrenome VARCHAR(40),
     cpf VARCHAR(40),
@@ -33,7 +33,10 @@
 	admissao VARCHAR(40),
     cargo VARCHAR(40),
     senha VARCHAR(40),
-	observacao VARCHAR(255),
-    primary key(id) );
+	observacao VARCHAR(255)
+   );
+    
+    INSERT INTO funcionarios(nome, sobrenome, cpf, emissor, data_nascimento, telefone, email, admissao, cargo, senha, observacao) VALUES ("mARIA", "fARIA", "12371247183", "ASFHASDJ", "1998-12-21", "3247823894723784", 
+    "DHAS@GMAIL.COM", "2023-02-12", "adm", "123456", "obs1");
     
     
