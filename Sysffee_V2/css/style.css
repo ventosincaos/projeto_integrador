@@ -8,7 +8,7 @@
   font-family: 'Poppins',sans-serif;
 }
 
-
+flex
 
 .slide-container {
   max-width: 1120px;
@@ -250,7 +250,7 @@ li a:hover:not(.active) {
 }
 
 body{
-  background-color:  #97A6E1;
+  background-color:  #fff;
 }
 
 .logo{
