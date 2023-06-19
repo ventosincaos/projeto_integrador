@@ -21,22 +21,38 @@
 	PRIMARY KEY (id)
 );
     
-    CREATE TABLE funcionarios (
-	id int AUTO_INCREMENT primary key,
-    nome VARCHAR(40),
-	sobrenome VARCHAR(40),
-    cpf VARCHAR(40),
-    emissor VARCHAR(40),
-    data_nascimento VARCHAR(40),
-    telefone VARCHAR(20),
-     email VARCHAR(40),
-	admissao VARCHAR(40),
-    cargo VARCHAR(40),
-    senha VARCHAR(40),
-	observacao VARCHAR(255)
-   );
-    
-    INSERT INTO funcionarios(nome, sobrenome, cpf, emissor, data_nascimento, telefone, email, admissao, cargo, senha, observacao) VALUES ("mARIA", "fARIA", "12371247183", "ASFHASDJ", "1998-12-21", "3247823894723784", 
-    "DHAS@GMAIL.COM", "2023-02-12", "adm", "123456", "obs1");
+  CREATE TABLE cargos(
+	idcargo VARCHAR(255) PRIMARY KEY
+);
+
+CREATE TABLE funcionarios(
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(45),
+sobrenome VARCHAR(45),
+cpf VARCHAR(11),
+emissor VARCHAR(20),
+data_nascimento DATE,
+telefone VARCHAR(20),
+email VARCHAR(150),
+admissao DATE,
+-- demissao DATE NULL,
+cargo VARCHAR(255),
+senha VARCHAR(255),
+observacao VARCHAR(8000),
+FOREIGN KEY(cargo) references cargos(idcargo)
+);
+
+SET SQL_SAFE_UPDATES = 0;
+
+SET foreign_key_checks = 0;
+
+INSERT INTO funcionarios(nome, sobrenome, cpf, emissor, data_nascimento, telefone, email, admissao, cargo, senha, observacao) 
+VALUES('Maricilene', 'Ferreira', '03529512141', 'SSP', '1998-12-21', '(61)983951104', 'marcilene@gmail.com', '2023-02-12', 'Administrador', '123456', 'observação 1');
+
+INSERT INTO funcionarios (nome, sobrenome, cpf, emissor, data_nascimento, telefone, email, admissao, cargo,  senha, observacao) 
+VALUES('joaquim', 'Ferreira','03529512142', 'SSP','1998-04-21', '(62)983951004', 'pipoquinha1@gmail.com', '2023-04-12', 'Geral', '123456', 'observação 2');
+
+INSERT INTO funcionarios (nome, sobrenome, cpf, emissor, data_nascimento, telefone, email, admissao, cargo,  senha, observacao) 
+VALUES('Tereza', 'Ferreira','03529512143', 'SSP','1998-02-21', '(84)984451044', 'pipoquinha2@gmail.com','2023-03-12', 'Geral', '123456', 'observação 3');
     
     
