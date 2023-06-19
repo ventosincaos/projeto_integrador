@@ -12,7 +12,7 @@ include_once("../config/processamentoProduto.php")
 <main class="table">
      
 <section class="table__header">
-<h1>Produtos do Estoque</h1>
+<h1>Estoque</h1>
         
           
      <?php if(count($AllProduct) > 0): ?>
