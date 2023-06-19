@@ -7,6 +7,7 @@
             <a href="table.php">Funcionários</a> <!--Colocar o link de referencia do arquivo no lugar do #-->
             <a href="tableProduct.php">Estoques</a>
             <a href="vendas.php">Vendas</a>
+            <a href="logout.php">Sair</a>
         </nav>
         <div id="myNav" class="overlay">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
