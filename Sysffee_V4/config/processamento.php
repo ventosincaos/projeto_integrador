@@ -34,6 +34,7 @@ if (!empty($data)) {
             $nome = $data["nome"];
             $sobrenome = $data["sobrenome"];
             $cpf = $data["cpf"];
+            $rg = $data["rg"];
             $emissor = $data["emissor"];
             $data_nascimento = $data["data_nascimento"];
             $telefone = $data["fone"];
@@ -44,12 +45,13 @@ if (!empty($data)) {
             $resposta = $data["resposta"];
             $observacao = $data["observacao"];
 
-            $query = "INSERT INTO funcionarios (nome, sobrenome, cpf, emissor, data_nascimento, telefone, email, admissao,  cargo, senha, resposta, observacao) VALUES (:nome, :sobrenome, :cpf, :emissor, :data_nascimento, :telefone,
+            $query = "INSERT INTO funcionarios (nome, sobrenome, cpf, rg, emissor, data_nascimento, telefone, email, admissao,  cargo, senha, resposta, observacao) VALUES (:nome, :sobrenome, :cpf, :rg, :emissor, :data_nascimento, :telefone,
 :email, :admissao,  :cargo, :senha, :resposta, :observacao)";
             $stmt = $conn->prepare($query);
             $stmt->bindParam(":nome", $nome);
             $stmt->bindParam(":sobrenome", $sobrenome);
             $stmt->bindParam(":cpf", $cpf);
+            $stmt->bindParam(":rg", $rg);
             $stmt->bindParam(":emissor", $emissor);
             $stmt->bindParam(":data_nascimento", $data_nascimento);
             $stmt->bindParam(":telefone", $telefone);
@@ -70,6 +72,7 @@ if (!empty($data)) {
             $nome = $data["nome"];
             $sobrenome = $data["sobrenome"];
             $cpf = $data["cpf"];
+            $rg = $data["rg"];
             $emissor = $data["emissor"];
             $data_nascimento = $data["data_nascimento"];
             $telefone = $data["fone"];
@@ -86,6 +89,7 @@ if (!empty($data)) {
     nome=:nome,
     sobrenome=:sobrenome,
     cpf=:cpf,
+    rg=:rg,
     emissor=:emissor,
     data_nascimento=:data_nascimento,
     telefone=:telefone,
@@ -101,6 +105,7 @@ if (!empty($data)) {
             $stmt->bindParam(":nome", $nome);
             $stmt->bindParam(":sobrenome", $sobrenome);
             $stmt->bindParam(":cpf", $cpf);
+            $stmt->bindParam(":rg", $rg);
             $stmt->bindParam(":emissor", $emissor);
             $stmt->bindParam(":data_nascimento", $data_nascimento);
             $stmt->bindParam(":telefone", $telefone);
