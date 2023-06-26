@@ -16,54 +16,65 @@ include_once("head.php");
          <input type="hidden" name="type" value="create">
          <div class="card">
             <h1>Cadastrar </h1>
-
+            
+            <h3>Informações Pessoais </h3>
             <div class="texfield-group-">
                <div class="texfield">
                   <label for="nome">Nome</label>
-                  <input type="text" id="nome" name="nome" placeholder="digite o nome" required>
+                  <input type="text" id="nome" name="nome" placeholder="digite o nome" value="" required>
                </div>
                <div class="texfield">
-                  <label for="sobrenome">Sobrenome</label>
-                  <input type="text" id="sobrenome" name="sobrenome" placeholder="digite o sobrenome" required>
+                  <label for="nome">Sobrenome</label>
+                  <input type="text" id="sobrenome" name="sobrenome" placeholder="digite o nome" value="" required>
                </div>
             </div>
 
             <div class="texfield-group">
                <div class="texfield">
                   <label for="cpf">CPF</label>
-                  <input type="text" id="cpf" name="cpf" placeholder="digite o cpf" required>
+                  <input type="text" id="cpf" name="cpf" placeholder="digite o cpf" value="" required>
+               </div>
+               <div class="texfield">
+                  <label for="rg">RG</label>
+                  <input type="text" id="rg" name="rg" placeholder="digite o órgão emissor" value="" required>
                </div>
                <div class="texfield">
                   <label for="emissor">Emissor</label>
-                  <input type="text" id="emissor" name="emissor" placeholder="digite o órgão emissor" required>
+                  <input type="text" id="emissor" name="emissor" placeholder="digite o órgão emissor" value="" required>
                </div>
+            </div>
+
+            <div class="texfield-group-">
                <div class="texfield">
                   <label for="data_nascimento">Nascimento:</label>
-                  <input type="date" id="data_nascimento" name="data_nascimento" placeholder="digite o seu niver" required>
+                  <input type="text" id="data_nascimento" name="data_nascimento" placeholder="digite o seu niver" value="" required>
                </div>
-            </div>
-
-            <div class="texfield-group-">
                <div class="texfield">
                   <label for="fone">Telefone</label>
-                  <input type="text" id="fone" name="fone" placeholder="digite o telefone" required>
-               </div>
-               <div class="texfield">
-                  <label for="email">E-mail</label>
-                  <input type="email" id="email" name="email" placeholder="digite o email" required>
+                  <input type="text" id="fone" name="fone" placeholder="digite o telefone" value="" required>
                </div>
             </div>
-
-            <div class="texfield-group-">
+            <div class="texfield">
+                  <label for="email">E-mail</label>
+                  <input type="email" id="email" name="email" placeholder="digite o email" value="" required>
+               </div>
+            </br>
+            <h3>Informações Trabalhistas </h3>
+            <div class="texfield-group">
                <div class="texfield">
                   <label for="admissao"> Data de admissão</label>
-                  <input type="date" id="admissao" name="admissao" required>
+                  <input type="text" id="admissao" name="admissao" value="" required>
+               </div>
+
+               <div class="texfield">
+                  <label for="demissao"> Data de demissao:</label>
+                  <input type="text" class="form-control" id="demissao" name="demissao" value="">
                </div>
 
                <div class="texfield">
                   <label for="cargo">Cargo</label>
-                  <select id="cargo" name="cargo" required>
-                     <option value="" disabled selected>selecione um cargo</option>
+                  <select id="cargo" name="cargo" value="" required>
+                     <option value="" selected>selecione</option>
                      <option value="1">gerente</option>
                      <option value="2">funcionario</option>
                   </select>
@@ -73,19 +84,17 @@ include_once("head.php");
             <div class="texfield-group-">
                <div class="texfield">
                   <label for="senha">Senha</label>
-                  <input type="password" id="senha" name="senha" placeholder="digite a senha" required>
+                  <input type="password" id="senha" name="senha" placeholder="digite a senha" value="" required>
                </div>
                <div class="texfield">
                   <label for="resposta">Resposta</label>
-                  <input type="resposta" id="resposta" name="resposta" placeholder="explique o que é um deus" required>
+                  <input type="resposta" id="resposta" name="resposta" placeholder="explique o que é um deus" value="" required>
                </div>
             </div>
 
-
             <div class="texfield">
-               <label for="observacao">Descrição</label>
-               <textarea type="text" id="observacao" name="observacao" placeholder=" Descrição do cargo" rows="3">
-               </textarea>
+               <label for="observacao">Observação</label>
+               <input type="text" id="observacao" name="observacao" value="">
             </div>
             <br>
             <button type="submit" class="btn">Cadastrar</button>
