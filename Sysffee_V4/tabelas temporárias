@@ -24,20 +24,21 @@ CREATE TABLE produto (
 );
     
 CREATE TABLE funcionarios (
-	id int AUTO_INCREMENT primary key,
+    id int AUTO_INCREMENT primary key,
     nome VARCHAR(40),
-	sobrenome VARCHAR(40),
+    sobrenome VARCHAR(40),
     cpf VARCHAR(40),
+    rg VARCHAR(40),
     emissor VARCHAR(40),
     data_nascimento VARCHAR(40),
     telefone VARCHAR(20),
     email VARCHAR(40),
-	admissao VARCHAR(40),
+    admissao VARCHAR(40),
     demissao VARCHAR(40),
     cargo int,
     senha VARCHAR(40),
     resposta VARCHAR(10),
-	observacao VARCHAR(255),
+    observacao VARCHAR(255),
     CONSTRAINT unique_email UNIQUE (email),
     CONSTRAINT unique_cpf UNIQUE (cpf)
 );
@@ -50,13 +51,13 @@ id int AUTO_INCREMENT primary key,
 INSERT INTO token (token) Values ('macarrão');
 
 -- Inserção dos funcionários
-INSERT INTO funcionarios (nome, sobrenome, cpf, emissor, data_nascimento, telefone, email, admissao, cargo, senha, resposta, observacao)
+INSERT INTO funcionarios (nome, sobrenome, cpf, rg, emissor, data_nascimento, telefone, email, admissao, cargo, senha, resposta, observacao)
 VALUES
-    ('Jane', 'Austen', '12345678901', 'SSP', '16/12/1775', '999999999', 'jane.austen@example.com', '01/01/2023', 1, 'senha123', 'Edilberto', ''),
-    ('Charles', 'Dickens', '23456789012', 'SSP', '07/02/1812', '888888888', 'charles.dickens@example.com', '01/01/2023', 1, 'senha123', 'Edilberto', ''),
-    ('Fyodor', 'Dostoevsky', '34567890123', 'SSP', '11/11/1821', '777777777', 'fyodor.dostoevsky@example.com', '01/01/2023', 1, 'senha123', 'Edilberto', ''),
-    ('Jane', 'Eyre', '45678901234', 'SSP', '21/04/1816', '666666666', 'jane.eyre@example.com', '01/01/2023', 1, 'senha123', 'Edilberto', ''),
-    ('Herman', 'Melville', '56789012345', 'SSP', '01/08/1819', '555555555', 'herman.melville@example.com', '01/01/2023', 1, 'senha123', 'Edilberto', '');
+    ('Jane', 'Austen', '12345678901', '109.123.33', 'SSP', '16/12/1775', '999999999', 'jane.austen@example.com', '01/01/2023', 1, 'senha123', 'Edilberto', ''),
+    ('Charles', 'Dickens', '23456789012', '145.561.74', 'SSP', '07/02/1812', '888888888', 'charles.dickens@example.com', '01/01/2023', 1, 'senha123', 'Edilberto', ''),
+    ('Fyodor', 'Dostoevsky', '34567890123', '957.586.47', 'SSP', '11/11/1821', '777777777', 'fyodor.dostoevsky@example.com', '01/01/2023', 1, 'senha123', 'Edilberto', ''),
+    ('Jane', 'Eyre', '45678901234', '713.431.59', 'SSP', '21/04/1816', '666666666', 'jane.eyre@example.com', '01/01/2023', 1, 'senha123', 'Edilberto', ''),
+    ('Herman', 'Melville', '56789012345', '117.635.21', 'SSP', '01/08/1819', '555555555', 'herman.melville@example.com', '01/01/2023', 1, 'senha123', 'Edilberto', '');
 
 -- Inserção dos produtos da cafeteria
 INSERT INTO produto (nome, descricao, cod_product, quantidade, validade, preco)
